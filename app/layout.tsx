@@ -6,6 +6,13 @@ import { ContactForm } from './components/contact-form'
 import { Footer } from './components/footer'
 import { Toaster } from './components/toaster'
 import { BackToTop } from './components/back-to-top'
+import 'keen-slider/keen-slider.min.css'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+
+
+
 
 export const metadata = {
   title: {
@@ -14,7 +21,7 @@ export const metadata = {
   },
   icons: [
     {
-      url: '/images/logo.svg',
+      url: '/images/logo22.svg',
     },
   ],
 }

@@ -17,6 +17,7 @@ type ProjectDetailsProps = {
 }
 
 export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
+  debugger
   return (
     <section className="w-full sm:min-h-[750px] flex flex-col items-center justify-end relative pb-10 sm:pb-24 py-24 px-6 overflow-hidden">
       <motion.div
@@ -30,7 +31,7 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
       />
 
       <SectionTitle
-        subtitle="experiência"
+        subtitle="notícia"
         title={project.title}
         className="text-center items-center sm:[&>h3]:text-4xl"
       />
@@ -38,7 +39,10 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         className="text-gray-400 text-center max-w-[640px] my-4 sm:my-6 text-sm sm:text-base"
         {...fadeUpAnimation}
       >
-        <RichText content={project.description.raw} />
+        {/* <RichText content={project.description.raw} /> */}
+        <div dangerouslySetInnerHTML={{ __html: project.description.text }} />
+
+
       </motion.div>
       <div className="w-full max-w-[330px] flex flex-wrap gap-2 items-center justify-center">
         {project.technologies.map((tech, i) => (
@@ -62,18 +66,10 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
             </Button>
           </a>
         )}
-        {project?.liveProjectUrl && (
-          <a href={project.liveProjectUrl} target="_blank" rel="noreferrer">
-            <Button className="min-w-[180px]">
-              <FiGlobe size={20} />
-              Projeto Online
-            </Button>
-          </a>
-        )}
       </motion.div>
       <Link href="/projects">
         <HiArrowNarrowLeft size={20} />
-        Voltar para projetos
+        Voltar as notícias
       </Link>
     </section>
   )

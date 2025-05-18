@@ -10,9 +10,9 @@ module.exports = {
       sans: ['var(--font-inter)', 'sans-serif'],
     },
     extend: {
-      backgroundImage: {
+      /*backgroundImage: {
         'hero-image': "url('/images/hero-bg.png')",
-      },
+      },*/
       fontFamily: {
         mono: ['var(--font-plex-mono)', 'monospace'],
       },

@@ -1,6 +1,5 @@
 import { HeroSection } from './components/pages/home/hero-section'
 import { HighlightedProjects } from './components/pages/home/highlighted-projects'
-import { KnownTechs } from './components/pages/home/known-techs'
 import { WorkExperience } from './components/pages/home/work-experience'
 import { HomePageData } from './types/page-info'
 import { fetchHygraphQuery } from './utils/fetch-hygraph-query'
@@ -26,11 +25,6 @@ const getPageData = async (): Promise<HomePageData> => {
           url
           iconSvg
         }
-        knownTechs {
-          iconSvg
-          name
-          startDate
-        }
         highlightProjects {
           slug
           thumbnail {
@@ -40,6 +34,12 @@ const getPageData = async (): Promise<HomePageData> => {
           shortDescription
           technologies {
             name
+          }
+        }
+        image {
+          name
+          image {
+            url
           }
         }
       }
@@ -72,9 +72,9 @@ export default async function Home() {
   const { page: pageData, workExperiences } = await getPageData()
 
   return (
+    console.log(pageData),
     <>
       <HeroSection homeInfo={pageData} />
-      <KnownTechs techs={pageData.knownTechs} />
       <HighlightedProjects projects={pageData.highlightProjects} />
       <WorkExperience experiences={workExperiences} />
     </>

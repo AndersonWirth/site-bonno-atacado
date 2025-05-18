@@ -11,7 +11,7 @@ const NAV_ITEMS = [
     href: '/',
   },
   {
-    label: 'Projetos',
+    label: 'Notícias',
     href: '/projects',
   },
 ]
@@ -19,7 +19,7 @@ const NAV_ITEMS = [
 export const Header = () => {
   return (
     <motion.header
-      className="absolute top-0 z-10 h-24 w-full flex items-center justify-center"
+      className="absolute top-0 z-10 h-24 w-full flex items-center justify-center bg-blue-950"
       initial={{ top: -100 }}
       animate={{ top: 0 }}
       transition={{ duration: 0.5 }}
@@ -29,8 +29,8 @@ export const Header = () => {
           <Image
             width={130}
             height={130}
-            src="/images/logo.svg"
-            alt="Logo Anderson Wirth"
+            src="/images/logo22.svg"
+            alt="Logo Bonno Freeshop"
           />
         </Link>
 

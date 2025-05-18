@@ -9,8 +9,8 @@ export const PageIntroduction = () => {
   return (
     <section className="w-full h-[450px] lg:h-[630px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center px-2">
       <SectionTitle
-        subtitle="projetos"
-        title="Meus Projetos"
+        subtitle="Notícias"
+        title=""
         className="text-center items-center [&>h3]:text-4xl"
       />
       <motion.div
@@ -21,11 +21,7 @@ export const PageIntroduction = () => {
         transition={{ duration: 0.6 }}
       >
         <p className="text-gray-400 text-center max-w-[640px] my-6 text-sm sm:text-base">
-          Aqui você poderá conhecer alguns dos trabalhos que desenvolvi ao longo
-          da minha trajetória, incluindo projetos técnicos e experiências
-          profissionais. Navegue à vontade e explore os detalhes de cada
-          iniciativa — desde as tecnologias utilizadas até as soluções
-          implementadas e os resultados alcançados na prática.
+          Aqui você poderá conhecer e acompanhar algumas das notícias e novidades que ocorrem na loja.
         </p>
         <Link href="/">
           <HiArrowNarrowLeft size={20} />

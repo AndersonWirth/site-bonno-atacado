@@ -11,5 +11,9 @@ declare module PageInfo {
     profilePicture: {
       url: string
     }
+    images: {
+      name: string
+      url: string
+    }[]
   }
 }

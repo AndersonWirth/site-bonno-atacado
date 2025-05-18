@@ -1,14 +1,5 @@
 import type { RichTextContent } from '@graphcms/rich-text-types'
 
-export type KnownTech = {
-  iconSvg: string
-  name: string
-  startDate: string
-}
-
-export type Technology = {
-  name: string
-}
 
 export type ProjectSection = {
   title: string
@@ -24,7 +15,6 @@ export type Project = {
   }
   title: string
   shortDescription: string
-  technologies: Technology[]
   pageThumbnail: {
     url: string
   }
@@ -36,3 +26,11 @@ export type Project = {
   liveProjectUrl?: string
   githubUrl?: string
 }
+
+export type ImageCarrosel = {
+  name: string
+  image: {
+    url: string
+  }
+}
+

@@ -39,11 +39,10 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
 
   const formattedDuration =
     years > 0
-      ? `${years} ano${years > 1 ? 's' : ''}${
-          monthsRemaining > 0
-            ? ` e ${monthsRemaining} mes${monthsRemaining > 1 ? 'es' : ''}`
-            : ''
-        }`
+      ? `${years} ano${years > 1 ? 's' : ''}${monthsRemaining > 0
+        ? ` e ${monthsRemaining} mes${monthsRemaining > 1 ? 'es' : ''}`
+        : ''
+      }`
       : `${months} mes${months > 1 ? 'es' : ''}`
 
   return (

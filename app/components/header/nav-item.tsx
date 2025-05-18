@@ -1,7 +1,7 @@
 import { cn } from '@/app/lib/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { IoBugSharp } from 'react-icons/io5'
+import { TiShoppingCart } from "react-icons/ti";
 
 type NavItemProps = {
   href: string
@@ -21,8 +21,8 @@ export const NavItem = ({ label, href }: NavItemProps) => {
         isActive && 'text-gray-50',
       )}
     >
-      <span className="text-emerald-400">
-        <IoBugSharp />
+      <span className="text-yellow-300 text-2xl">
+        <TiShoppingCart />
       </span>
       {label}
     </Link>
