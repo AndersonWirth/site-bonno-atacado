@@ -8,7 +8,6 @@ export type WorkExperience = {
   companyName: string
   companyUrl: string
   startDate: string
-  endDate: string
   description: {
     raw: RichTextContent
   }

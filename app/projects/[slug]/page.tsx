@@ -33,9 +33,6 @@ const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
         raw
         text
       }
-      technologies {
-        name
-      }
       liveProjectUrl
       githubUrl
     }
@@ -80,8 +77,6 @@ export async function generateMetadata({
 }: ProjectProps): Promise<Metadata> {
   const data = await getProjectDetails(slug)
   const project = data.project
-  debugger
-  console.log(project);
   return {
     title: project.title,
     description: project.description.text,

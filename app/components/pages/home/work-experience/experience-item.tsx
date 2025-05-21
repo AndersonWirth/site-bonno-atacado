@@ -21,7 +21,6 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
     companyUrl,
     description,
     role,
-    technologies,
   } = experience
 
   const startDate = new Date(experience.startDate)
@@ -87,16 +86,6 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
         <p className="text-gray-400 text-sm mb-3 mt-6 font-semibold">
           Competência
         </p>
-        <div className="flex gap-x-2 gap-y-3 flex-wrap lg:max-w-[350px] mb-8">
-          {technologies.map((tech, i) => (
-            <TechBadge
-              name={tech.name}
-              key={`experience-${companyName}-tech-${tech.name}`}
-              {...techBadgeAnimation}
-              transition={{ duration: 0.2, delay: i * 0.1 }}
-            />
-          ))}
-        </div>
       </div>
     </motion.div>
   )

@@ -17,9 +17,6 @@ const getPageData = async (): Promise<ProjectsPageData> => {
         thumbnail {
           url
         }
-        technologies {
-          name
-        }
       }
     }
     `

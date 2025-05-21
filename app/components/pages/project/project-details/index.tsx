@@ -42,22 +42,6 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         {/* <RichText content={project.description.raw} /> */}
         <div dangerouslySetInnerHTML={{ __html: project.description.text }} />
 
-
-      </motion.div>
-      <div className="w-full max-w-[330px] flex flex-wrap gap-2 items-center justify-center">
-        {project.technologies.map((tech, i) => (
-          <TechBadge
-            name={tech.name}
-            key={tech.name}
-            {...techBadgeAnimation}
-            transition={{ duration: 0.3, delay: i * 0.1 }}
-          />
-        ))}
-      </div>
-      <motion.div
-        className="my-6 sm:my-12 flex items-center gap-2 sm:gap-4 flex-col sm:flex-row"
-        {...fadeUpAnimation}
-      >
         {project?.githubUrl && (
           <a href={project.githubUrl} target="_blank" rel="noreferrer">
             <Button className="min-w-[180px]">

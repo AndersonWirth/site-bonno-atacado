@@ -6,7 +6,6 @@ type ProjectCardProps = {
 }
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
-  const technologies = project.technologies.map((x) => x.name).join(', ')
   return (
     <div className="rounded-lg h-[436px] flex flex-col bg-gray-800 overflow-hidden group transition-all border-2 border-gray-800 hover:border-emerald-500 opacity-70 hover:opacity-100">
       <div className="w-full h-48 overflow-hidden">
@@ -27,10 +26,6 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         <p className="mt-2 text-gray-400 line-clamp-4">
           {project.shortDescription}
         </p>
-
-        <span className="text-gray-300 text-sm font-medium block mt-auto truncate">
-          {technologies}
-        </span>
       </div>
     </div>
   )
