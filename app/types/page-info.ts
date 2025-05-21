@@ -1,6 +1,5 @@
 import type { RichTextContent } from '@graphcms/rich-text-types'
 import { ImageCarrosel, Project } from './projects'
-import { WorkExperience } from './work-experience'
 
 export type Social = {
   url: string
@@ -35,5 +34,4 @@ export type ProjectsPageStaticData = {
 
 export type HomePageData = {
   page: HomePageInfo
-  workExperiences: WorkExperience[]
 }

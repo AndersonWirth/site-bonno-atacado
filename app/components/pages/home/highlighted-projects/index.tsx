@@ -1,9 +1,9 @@
 import { HorizontalDivider } from '@/app/components/divider/horizontal'
-import { SectionTitle } from '@/app/components/section-title'
-import { ProjectCard } from './project-card'
-import { HiArrowNarrowRight } from 'react-icons/hi'
 import { Link } from '@/app/components/link'
+import { SectionTitle } from '@/app/components/section-title'
 import { Project } from '@/app/types/projects'
+import { HiArrowNarrowRight } from 'react-icons/hi'
+import { ProjectCard } from './project-card'
 
 type HighlightedProjectsProps = {
   projects: Project[]
@@ -12,7 +12,9 @@ type HighlightedProjectsProps = {
 export const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
   return (
     <section className="container py-16">
-      <SectionTitle subtitle="destaques" title="Notícias em destaque" />
+      <SectionTitle
+        title="Notícias em destaque"
+        className="items-center text-center" />
       <HorizontalDivider className="mb-16" />
 
       <div>

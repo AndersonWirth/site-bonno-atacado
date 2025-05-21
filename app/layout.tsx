@@ -1,15 +1,16 @@
-import { Inter, IBM_Plex_Mono } from 'next/font/google'
-import './globals.css'
-import { Header } from './components/header'
-import { ReactNode } from 'react'
-import { ContactForm } from './components/contact-form'
-import { Footer } from './components/footer'
-import { Toaster } from './components/toaster'
-import { BackToTop } from './components/back-to-top'
 import 'keen-slider/keen-slider.min.css'
+import { IBM_Plex_Mono, Inter } from 'next/font/google'
+import { ReactNode } from 'react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import { BackToTop } from './components/back-to-top'
+import { ContactForm } from './components/contact-form'
+import { Footer } from './components/footer'
+import { Header } from './components/header'
+import { Mapa } from './components/mapa'
+import { Toaster } from './components/toaster'
+import './globals.css'
 
 
 
@@ -17,7 +18,7 @@ import 'swiper/css/pagination'
 export const metadata = {
   title: {
     default: 'Home',
-    template: '%s | Anderson Wirth',
+    template: '%s | Bonno Freeshop',
   },
   icons: [
     {
@@ -46,6 +47,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
         <Header />
         {children}
+        <Mapa />
         <ContactForm />
         <Footer />
       </body>

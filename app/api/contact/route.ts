@@ -1,58 +1,50 @@
-import axios from 'axios'
 import { NextResponse } from 'next/server'
-import { z } from 'zod'
-
-const bodySchema = z.object({
-  name: z.string(),
-  phone: z.string(),
-  email: z.string().email(),
-  message: z.string(),
-})
 
 const WEBHOOK_URL = process.env.WEBHOOK_URL!
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json()
-    const { name, phone, email, message } = bodySchema.parse(body)
+    const formData = await request.formData()
 
-    const messageData = {
+    const name = formData.get('name')?.toString() || ''
+    const phone = formData.get('phone')?.toString() || ''
+    const email = formData.get('email')?.toString() || ''
+    const message = formData.get('message')?.toString() || ''
+    const file = formData.get('file') as File | null
+
+    const discordBody = new FormData()
+
+    const payload = {
       embeds: [
         {
           title: 'Mensagem de Contato',
           color: 0x4983f5,
           fields: [
-            {
-              name: 'Nome',
-              value: name,
-              inline: true,
-            },
-            {
-              name: 'Telefone',
-              value: phone,
-              inline: true,
-            },
-            {
-              name: 'E-mail',
-              value: email,
-              inline: true,
-            },
-            {
-              name: 'Mensagem',
-              value: message,
-            },
+            { name: 'Nome', value: name, inline: true },
+            { name: 'Telefone', value: phone, inline: true },
+            { name: 'E-mail', value: email, inline: true },
+            { name: 'Mensagem', value: message },
           ],
         },
       ],
     }
 
-    await axios.post(WEBHOOK_URL, messageData)
+    discordBody.append('payload_json', JSON.stringify(payload))
 
-    return NextResponse.json({
-      message: 'Mensagem enviada com sucesso!',
+    if (file) {
+      discordBody.append('file', file, file.name)
+    }
+
+    const response = await fetch(WEBHOOK_URL, {
+      method: 'POST',
+      body: discordBody,
     })
+
+    if (!response.ok) throw new Error('Erro ao enviar para o Discord')
+
+    return NextResponse.json({ message: 'Mensagem enviada com sucesso!' })
   } catch (error) {
-    console.log(error)
-    return NextResponse.error()
+    console.error(error)
+    return NextResponse.json({ error: 'Erro ao enviar mensagem' }, { status: 500 })
   }
 }

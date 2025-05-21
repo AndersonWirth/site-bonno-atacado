@@ -1,6 +1,5 @@
 import { HeroSection } from './components/pages/home/hero-section'
 import { HighlightedProjects } from './components/pages/home/highlighted-projects'
-import { WorkExperience } from './components/pages/home/work-experience'
 import { HomePageData } from './types/page-info'
 import { fetchHygraphQuery } from './utils/fetch-hygraph-query'
 
@@ -9,6 +8,7 @@ export const metadata = {
 }
 
 const getPageData = async (): Promise<HomePageData> => {
+  debugger
   const query = `
     query PageInfoQuery {
       page(where: {slug: "home"}) {
@@ -37,19 +37,6 @@ const getPageData = async (): Promise<HomePageData> => {
           }
         }
       }
-      workExperiences {
-        companyLogo {
-          url
-        }
-        role
-        companyName
-        companyUrl
-        startDate
-        endDate
-        description {
-          raw
-        }
-      }
     }
   `
 
@@ -60,14 +47,13 @@ const getPageData = async (): Promise<HomePageData> => {
 }
 
 export default async function Home() {
-  const { page: pageData, workExperiences } = await getPageData()
-
+  const { page: pageData } = await getPageData()
+debugger
   return (
     console.log(pageData),
     <>
       <HeroSection homeInfo={pageData} />
       <HighlightedProjects projects={pageData.highlightProjects} />
-      <WorkExperience experiences={workExperiences} />
     </>
   )
 }

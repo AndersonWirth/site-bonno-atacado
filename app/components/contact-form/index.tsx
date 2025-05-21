@@ -1,21 +1,22 @@
 'use client'
 
-import { z } from 'zod'
-import { SectionTitle } from '../section-title'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { Button } from '../button'
-import { HiArrowNarrowRight } from 'react-icons/hi'
-import { motion } from 'framer-motion'
-import axios from 'axios'
-import { toast } from 'react-hot-toast'
 import { fadeUpAnimation } from '@/app/lib/animations'
+import { zodResolver } from '@hookform/resolvers/zod'
+import axios from 'axios'
+import { motion } from 'framer-motion'
+import { useForm } from 'react-hook-form'
+import { toast } from 'react-hot-toast'
+import { HiArrowNarrowRight } from 'react-icons/hi'
+import { z } from 'zod'
+import { Button } from '../button'
+import { SectionTitle } from '../section-title'
 
 const contactFormSchema = z.object({
   name: z.string().min(3).max(100),
   phone: z.string().min(9).max(15),
   email: z.string().email(),
   message: z.string().min(1).max(500),
+  file: z.any().optional(),
 })
 
 type ContactFormData = z.infer<typeof contactFormSchema>
@@ -32,7 +33,19 @@ export const ContactForm = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      await axios.post('/api/contact', data)
+      const formData = new FormData()
+      formData.append('name', data.name)
+      formData.append('phone', data.phone)
+      formData.append('email', data.email)
+      formData.append('message', data.message)
+
+      const fileInput = (document.querySelector('#file') as HTMLInputElement)
+      const file = fileInput?.files?.[0]
+      if (file) {
+        formData.append('file', file)
+      }
+
+      await axios.post('/api/contact', formData)
       toast.success('Mensagem enviada com sucesso!')
       reset()
     } catch (error) {
@@ -47,7 +60,6 @@ export const ContactForm = () => {
     >
       <div className="w-full max-w-[420px] mx-auto">
         <SectionTitle
-          subtitle="contato"
           title="Vamos trabalhar juntos? Entre em contato"
           className="items-center text-center"
         />
@@ -56,27 +68,32 @@ export const ContactForm = () => {
           onSubmit={handleSubmit(onSubmit)}
           {...fadeUpAnimation}
         >
+          <input 
+          placeholder="Nome"
+          className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
+           {...register('name')}
+           />
           <input
-            placeholder="Nome"
-            className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
-            {...register('name')}
+          placeholder="Telefone"
+          className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
+          {...register('phone')}
           />
           <input
-            placeholder="Telefone"
-            className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
-            {...register('phone')}
+          placeholder="E-mail"
+           className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
+           type="email"
+           {...register('email')}
+           />
+          <textarea placeholder="Mensagem"
+          className="resize-none w-full h-[138px] bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
+          {...register('message')}
           />
+
           <input
-            placeholder="E-mail"
-            type="email"
+            id="file"
+            type="file"
+            accept=".pdf,.jpg,.png,.doc,.docx"
             className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
-            {...register('email')}
-          />
-          <textarea
-            placeholder="Mensagem"
-            className="resize-none w-full h-[138px] bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
-            {...register('message')}
-            maxLength={500}
           />
 
           <div className="relative w-max mx-auto mt-6">
