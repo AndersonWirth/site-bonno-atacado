@@ -5,9 +5,6 @@ declare module PageInfo {
     introduction: {
       raw: RichTextContent
     }
-    technologies: {
-      name: string
-    }[]
     profilePicture: {
       url: string
     }

@@ -14,6 +14,14 @@ const NAV_ITEMS = [
     label: 'Notícias',
     href: '/projects',
   },
+  {
+    label: 'Tabloide',
+    href: '/tabloide',
+  },
+  {
+    label: 'Contato',
+    href: '/contato',
+  },
 ]
 
 export const Header = () => {

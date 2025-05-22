@@ -6,14 +6,14 @@ import Image from "next/image"
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
-import { ImageCarrosel } from "@/app/types/projects"
+import { Tabloide } from "@/app/types/projects"
 
-type Imagens = {
-    imagem: ImageCarrosel[]
+type Tabloides = {
+    tabloide: Tabloide
 }
 
 
-export default function Carrosel({ imagem }: Imagens) {
+export default function Tabloides({ tabloide }: Tabloides) {
     debugger
     return (
         <div className="w-full max-w-6xl mx-auto">
@@ -31,18 +31,15 @@ export default function Carrosel({ imagem }: Imagens) {
                 slidesPerView={1}
                 className="h-[300px] sm:h-[400px] md:h-[500px] rounded overflow-hidden"
             >
-                {imagem.map((src, i) => (
-                    <SwiperSlide key={i} className="w-full h-full flex items-center justify-center">
-                        <Image
-                            src={src.image.url}
-                            alt={`Slide ${i}`}
-                            width={1600}
-                            height={450}
-                            className="w-full h-auto object-cover"
-                            priority
-                        />
-                    </SwiperSlide>
-
+                {tabloide.map((src, i) => (
+                    <Image
+                        src={src.capa.url}
+                        alt={`Slide ${i}`}
+                        width={1600}
+                        height={450}
+                        className="w-full h-auto object-cover"
+                        priority
+                    />
                 ))}
             </Swiper>
         </div>

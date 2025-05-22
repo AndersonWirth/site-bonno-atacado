@@ -9,7 +9,6 @@ export const PageIntroduction = () => {
   return (
     <section className="w-full h-[450px] lg:h-[630px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center px-2">
       <SectionTitle
-        subtitle="Notícias"
         title=""
         className="text-center items-center [&>h3]:text-4xl"
       />

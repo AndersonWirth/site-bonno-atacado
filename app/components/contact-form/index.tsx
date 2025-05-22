@@ -55,7 +55,7 @@ export const ContactForm = () => {
 
   return (
     <section
-      className="py-16 px-6 md:py-32 flex items-center justify-center bg-blue-950"
+      className="px-6 md:pt-32 flex items-center justify-center bg-blue-950"
       id="contact"
     >
       <div className="w-full max-w-[420px] mx-auto">
@@ -68,25 +68,25 @@ export const ContactForm = () => {
           onSubmit={handleSubmit(onSubmit)}
           {...fadeUpAnimation}
         >
-          <input 
-          placeholder="Nome"
-          className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
-           {...register('name')}
-           />
           <input
-          placeholder="Telefone"
-          className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
-          {...register('phone')}
+            placeholder="Nome"
+            className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
+            {...register('name')}
           />
           <input
-          placeholder="E-mail"
-           className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
-           type="email"
-           {...register('email')}
-           />
+            placeholder="Telefone"
+            className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
+            {...register('phone')}
+          />
+          <input
+            placeholder="E-mail"
+            className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
+            type="email"
+            {...register('email')}
+          />
           <textarea placeholder="Mensagem"
-          className="resize-none w-full h-[138px] bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
-          {...register('message')}
+            className="resize-none w-full h-[138px] bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
+            {...register('message')}
           />
 
           <input

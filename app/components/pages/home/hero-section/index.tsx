@@ -10,6 +10,8 @@ import { CMSIcon } from '@/app/components/cms-icon'
 import { RichText } from '@/app/components/rich-text'
 import { techBadgeAnimation } from '@/app/lib/animations'
 import Carrosel from '@/app/components/carrosel'
+import Tabloides from '@/app/components/tabloide'
+
 
 type HeroSectionProps = {
   homeInfo: HomePageInfo
@@ -57,6 +59,9 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
               ))}
             </div>
           </div>
+
+          <Tabloides tabloide={homeInfo.tabloide}></Tabloides>
+
         </motion.div>
       </div>
     </section>

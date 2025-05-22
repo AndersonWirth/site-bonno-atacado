@@ -44,12 +44,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <Toaster />
         <BackToTop />
-
         <Header />
         {children}
-        <Mapa />
-        <ContactForm />
-        <Footer />
       </body>
     </html>
   )

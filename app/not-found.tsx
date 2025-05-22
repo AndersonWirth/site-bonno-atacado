@@ -9,7 +9,7 @@ export default function NotFound() {
       <h2 className="text-3xl font-medium text-gray-400 mb-4">
         Página não encontrada
       </h2>
-      <Link href="/">
+      <Link href='/'>
         <Button>
           <HiArrowNarrowLeft size={20} />
           Voltar para Home

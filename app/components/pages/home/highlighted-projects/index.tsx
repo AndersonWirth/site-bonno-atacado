@@ -14,7 +14,7 @@ export const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
     <section className="container py-16">
       <SectionTitle
         title="Notícias em destaque"
-        className="items-center text-center" />
+        className="items-center text-emerald-400 text-center" />
       <HorizontalDivider className="mb-16" />
 
       <div>
@@ -25,9 +25,9 @@ export const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
           </div>
         ))}
         <p className="flex items-center gap-1.5">
-          <span className="text-gray-400">Se interessou?</span>
+          <span className="text-gray-400">Se interessou nas notícias?</span>
           <Link href="/projects" className="inline-flex">
-            Ver todos
+            Ver todas
             <HiArrowNarrowRight />
           </Link>
         </p>

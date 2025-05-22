@@ -34,3 +34,29 @@ export type ImageCarrosel = {
   }
 }
 
+export type Rodape = {
+  nomeEmpresa: string
+  copyright: string
+  email: string
+  telefone: string
+  telefoneTelevendas: string
+  endereco: string
+  horario: string
+  documentos: {
+    url: string
+    fileName: string
+    mimeType: string
+    size: number
+  }[]
+}
+
+export type Tabloide = {
+  nome: string
+  imagens: {
+    url: string
+  }
+  capa: {
+    url: string
+  }
+}
+
