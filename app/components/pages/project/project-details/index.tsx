@@ -3,21 +3,17 @@
 import { Button } from '@/app/components/button'
 import { Link } from '@/app/components/link'
 import { SectionTitle } from '@/app/components/section-title'
-import { TechBadge } from '@/app/components/tech-badge'
-import { HiArrowNarrowLeft } from 'react-icons/hi'
-import { motion } from 'framer-motion'
+import { fadeUpAnimation } from '@/app/lib/animations'
 import { Project } from '@/app/types/projects'
-import { RichText } from '@/app/components/rich-text'
+import { motion } from 'framer-motion'
+import { HiArrowNarrowLeft } from 'react-icons/hi'
 import { TbBrandGithub } from 'react-icons/tb'
-import { FiGlobe } from 'react-icons/fi'
-import { fadeUpAnimation, techBadgeAnimation } from '@/app/lib/animations'
 
 type ProjectDetailsProps = {
   project: Project
 }
 
 export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
-  debugger
   return (
     <section className="w-full sm:min-h-[750px] flex flex-col items-center justify-end relative pb-10 sm:pb-24 py-24 px-6 overflow-hidden">
       <motion.div

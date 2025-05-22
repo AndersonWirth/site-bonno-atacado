@@ -17,7 +17,7 @@ export type HomePageInfo = {
   highlightProjects: Project[]
   image: ImageCarrosel[]
   rodape: Rodape
-  tabloide: Tabloide
+  tabloide: Tabloide[]
 }
 
 export type ProjectPageData = {

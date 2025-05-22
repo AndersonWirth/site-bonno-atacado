@@ -54,7 +54,7 @@ export type Tabloide = {
   nome: string
   imagens: {
     url: string
-  }
+  }[]
   capa: {
     url: string
   }

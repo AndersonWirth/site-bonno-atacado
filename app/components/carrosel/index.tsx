@@ -1,20 +1,18 @@
 'use client'
 
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Navigation, Pagination, Autoplay } from "swiper/modules"
+import { ImageCarrosel } from "@/app/types/projects"
 import Image from "next/image"
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
-import { ImageCarrosel } from "@/app/types/projects"
+import { Autoplay, Navigation, Pagination } from "swiper/modules"
+import { Swiper, SwiperSlide } from "swiper/react"
 
 type Imagens = {
     imagem: ImageCarrosel[]
 }
 
-
 export default function Carrosel({ imagem }: Imagens) {
-    debugger
     return (
         <div className="w-full max-w-6xl mx-auto">
             <Swiper
@@ -22,23 +20,26 @@ export default function Carrosel({ imagem }: Imagens) {
                 navigation
                 pagination={{ clickable: true }}
                 autoplay={{
-                    delay: 3000, // 3 segundos entre slides
-                    disableOnInteraction: false, // continua passando mesmo se o usuário clicar
-                    pauseOnMouseEnter: true, // 🛑 PAUSA no hover
+                    delay: 3000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
                 }}
                 loop={true}
                 spaceBetween={10}
                 slidesPerView={1}
-                className="h-[300px] sm:h-[400px] md:h-[500px] rounded overflow-hidden"
+                className="aspect-[16/9] rounded overflow-hidden"
             >
                 {imagem.map((src, i) => (
-                    <SwiperSlide key={i} className="w-full h-full flex items-center justify-center">
+                    <SwiperSlide
+                        key={i}
+                        className="w-full h-[400px] sm:h-[500px] md:h-[600px] flex items-center justify-center"
+                    >
                         <Image
                             src={src.image.url}
                             alt={`Slide ${i}`}
                             width={1600}
                             height={450}
-                            className="w-full h-auto object-cover"
+                            className="h-full object-contain"
                             priority
                         />
                     </SwiperSlide>

@@ -60,8 +60,8 @@ export const ContactForm = () => {
     >
       <div className="w-full max-w-[420px] mx-auto">
         <SectionTitle
-          title="Vamos trabalhar juntos? Entre em contato"
-          className="items-center text-center"
+          title="Vamos trabalhar juntos? Tem dúvidas? Elogios? ou Sugestões? Entre em contato"
+          className="items-center text-emerald-400 text-center"
         />
         <motion.form
           className="mt-12 w-full flex flex-col gap-4"

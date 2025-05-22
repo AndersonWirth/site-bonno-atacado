@@ -12,7 +12,7 @@ export const Mapa = () => {
       <div className="w-full max-w-3xl mx-auto">
         <SectionTitle
           title="Localização"
-          className="items-center text-center"
+          className="items-center text-emerald-400 text-center" 
         />
         <motion.div
           className="mt-12 w-full flex items-center justify-center bg-blue-950"

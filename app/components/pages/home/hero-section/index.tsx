@@ -1,16 +1,12 @@
 'use client'
 
 import { Button } from '@/app/components/button'
-import { TechBadge } from '@/app/components/tech-badge'
-import Image from 'next/image'
-import { HiArrowNarrowRight } from 'react-icons/hi'
-import { motion } from 'framer-motion'
-import { HomePageInfo } from '@/app/types/page-info'
-import { CMSIcon } from '@/app/components/cms-icon'
-import { RichText } from '@/app/components/rich-text'
-import { techBadgeAnimation } from '@/app/lib/animations'
 import Carrosel from '@/app/components/carrosel'
+import { CMSIcon } from '@/app/components/cms-icon'
 import Tabloides from '@/app/components/tabloide'
+import { HomePageInfo } from '@/app/types/page-info'
+import { motion } from 'framer-motion'
+import { HiArrowNarrowRight } from 'react-icons/hi'
 
 
 type HeroSectionProps = {
