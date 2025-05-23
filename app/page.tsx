@@ -16,7 +16,7 @@ export default async function Home() {
         <HeroSection homeInfo={pageData} />
         <HighlightedProjects noticias={pageData.highlightNoticias} />
         <Mapa />
-        <ContactForm />
+
       </>
     )
   )

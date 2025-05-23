@@ -14,7 +14,7 @@ type NoticiaCardProps = {
 export const NoticiaCard = ({ noticia }: NoticiaCardProps) => {
   return (
     <motion.div
-      className="flex gap-6 lg:gap-12 flex-col lg:flex-row group cursor-pointer rounded-xl overflow-hidden transition-transform duration-300 hover:scale-[1.01] shadow-lg hover:shadow-emerald-500/20"
+      className="flex gap-6 lg:gap-12 flex-col lg:flex-row group rounded-xl overflow-hidden transition-transform duration-300 hover:scale-[1.01] shadow-lg hover:shadow-emerald-500/20"
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 100 }}

@@ -25,9 +25,9 @@ export const HighlightedProjects = ({ noticias }: HighlightedProjectsProps) => {
             <HorizontalDivider className="my-16" />
           </div>
         ))}
-        <p className="flex items-center gap-1.5">
+        <p className="flex items-center gap-1.5 text-lg">
           <span className="text-gray-400">Se interessou nas notícias?</span>
-          <Link href="/noticias" className="inline-flex">
+          <Link href="/noticias" className="inline-flex text-lg">
             Ver todas
             <HiArrowNarrowRight />
           </Link>

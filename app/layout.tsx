@@ -11,6 +11,7 @@ import { Toaster } from './components/toaster'
 import { WhatsappButton } from './components/whatsapp'
 import './globals.css'
 import { getPageData } from './utils/get-page-data-query'
+import { ContactForm } from './components/contact-form'
 
 export const metadata = {
   title: {
@@ -45,6 +46,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <BackToTop />
         <Header />
         {children}
+        <ContactForm />
         <FooterAtacado contato={pageData.contato} />
       </body>
     </html>
