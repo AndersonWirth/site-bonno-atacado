@@ -1,5 +1,5 @@
-import { fetchHygraphQuery } from './fetch-hygraph-query'
 import { HomePageData } from '../types/page-info'
+import { fetchHygraphQuery } from './fetch-hygraph-query'
 
 export const getPageData = async (): Promise<HomePageData> => {
   const query = `
@@ -22,6 +22,7 @@ export const getPageData = async (): Promise<HomePageData> => {
           }
           title
           shortDescription
+          socialMidia
         }
         image {
           name

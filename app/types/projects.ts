@@ -14,6 +14,7 @@ export type Noticia = {
   }
   title: string
   shortDescription: string
+  socialMidia: string
   pageThumbnail: {
     url: string
   }
@@ -22,8 +23,6 @@ export type Noticia = {
     raw: RichTextContent
     text: string
   }
-  liveProjectUrl?: string
-  githubUrl?: string
 }
 
 export type ImageCarrosel = {

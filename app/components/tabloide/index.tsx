@@ -43,18 +43,18 @@ export default function Tabloides({ tabloide }: TabloidesProps) {
 
   return (
     <>
-      {/* Thumbnails */}
       <section>
         <SectionTitle
           title="Ofertas em Destaque"
           className="items-center text-emerald-400 text-center"
         />
         <HorizontalDivider className="mb-16" />
-        <div className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+        <div className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 px-4">
           {tabloide.map((item, i) => (
             <div
               key={item.nome}
-              className="cursor-pointer hover:opacity-80 transition"
+              className="relative cursor-pointer group overflow-hidden rounded-xl shadow-lg transition-transform duration-300 transform hover:scale-[1.02]"
               onClick={() => openGallery(i)}
             >
               <Image
@@ -62,8 +62,24 @@ export default function Tabloides({ tabloide }: TabloidesProps) {
                 alt={item.nome}
                 width={1600}
                 height={450}
-                className="w-full h-auto object-cover rounded"
+                className="w-full h-auto object-cover group-hover:brightness-75 transition duration-300"
               />
+
+              {/* Sobreposição com texto e ícone */}
+              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span className="text-white text-lg font-semibold flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 text-emerald-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405M4 4v16h16V4H4z" />
+                  </svg>
+                  Ver tabloide de ofertas
+                </span>
+              </div>
             </div>
           ))}
         </div>
@@ -86,10 +102,10 @@ export default function Tabloides({ tabloide }: TabloidesProps) {
 
               <div className="w-full max-w-6xl px-2 sm:px-6 max-h-screen">
                 <Swiper
-                  key={activeIndex} // <- força recriação
+                  key={activeIndex}
                   modules={[Navigation]}
                   navigation
-                  initialSlide={0} // <- agora pode ser sempre 0, pois o conteúdo já é filtrado
+                  initialSlide={0}
                   className="w-full"
                 >
                   {tabloide[activeIndex]?.imagens?.map((img, i) => (
@@ -97,9 +113,7 @@ export default function Tabloides({ tabloide }: TabloidesProps) {
                       <div className="w-full h-[60vh] sm:h-[80vh] flex items-center justify-center">
                         <Image
                           src={img.url}
-                          alt={`${tabloide[activeIndex].nome} - imagem ${
-                            i + 1
-                          }`}
+                          alt={`${tabloide[activeIndex].nome} - imagem ${i + 1}`}
                           width={1600}
                           height={900}
                           className="max-w-full max-h-full object-contain rounded"

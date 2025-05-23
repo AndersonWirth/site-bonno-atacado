@@ -29,12 +29,11 @@ const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
       }
       title
       shortDescription
+      socialMidia
       description {
         raw
         text
       }
-      liveProjectUrl
-      githubUrl
     }
   }
   `

@@ -5,13 +5,12 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { BackToTop } from './components/back-to-top'
-import { ContactForm } from './components/contact-form'
-import { Footer } from './components/footer'
 import { Header } from './components/header'
-import { Mapa } from './components/mapa'
+import { FooterAtacado } from './components/pages/home/contato'
 import { Toaster } from './components/toaster'
-import './globals.css'
 import { WhatsappButton } from './components/whatsapp'
+import './globals.css'
+import { getPageData } from './utils/get-page-data-query'
 
 export const metadata = {
   title: {
@@ -36,7 +35,8 @@ const plexMono = IBM_Plex_Mono({
   weight: ['400', '500'],
 })
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  const { page: pageData } = await getPageData()
   return (
     <html lang="pt-BR" className={`${inter.variable} ${plexMono.variable}`}>
       <body>
@@ -45,6 +45,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <BackToTop />
         <Header />
         {children}
+        <FooterAtacado contato={pageData.contato} />
       </body>
     </html>
   )

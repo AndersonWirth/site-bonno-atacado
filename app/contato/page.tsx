@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Clock, FileText } from 'lucide-react'
+import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 import { Metadata } from 'next'
 import { getPageData } from '../utils/get-page-data-query'
 
@@ -22,7 +22,7 @@ export default async function ContatoPage() {
   const contato = page.contato
 
   return (
-    <main className="max-w-6xl mx-auto px-4 py-32">
+    <main className="max-w-6xl mx-auto px-4 pt-32">
       <h1 className="text-5xl font-bold text-center text-emerald-400 mb-12">
         Entre em Contato
       </h1>
@@ -31,7 +31,7 @@ export default async function ContatoPage() {
         {/* Bloco de informações */}
         <section className="shadow-xl rounded-2xl p-8 space-y-6 border">
           <h2 className="text-2xl font-semibold text-emerald-400 mb-4">
-            Informações da Bonno Freeshop
+            Informações do Bonno Freeshop
           </h2>
           <ul className="space-y-4 text-emerald-400 text-base">
             <li className="flex items-start gap-3">

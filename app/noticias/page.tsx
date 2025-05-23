@@ -1,5 +1,5 @@
-import { PageIntroduction } from '../components/pages/noticias/page-introduction'
 import { ProjectsList } from '../components/pages/noticias/noticias-list'
+import { PageIntroduction } from '../components/pages/noticias/page-introduction'
 import { ProjectsPageData } from '../types/page-info'
 import { fetchHygraphQuery } from '../utils/fetch-hygraph-query'
 
@@ -12,6 +12,7 @@ const getPageData = async (): Promise<ProjectsPageData> => {
     query ProjectsQuery {
       noticias {
         shortDescription
+        socialMidia
         slug
         title
         thumbnail {
