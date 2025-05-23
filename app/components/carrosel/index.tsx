@@ -14,7 +14,7 @@ type Imagens = {
 
 export default function Carrosel({ imagem }: Imagens) {
     return (
-        <div className="w-full max-w-6xl mx-auto">
+        <div className="w-full max-w-6xl mx-auto px-4">
             <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 navigation
@@ -25,25 +25,23 @@ export default function Carrosel({ imagem }: Imagens) {
                     pauseOnMouseEnter: true,
                 }}
                 loop={true}
-                spaceBetween={10}
-                slidesPerView={1}
-                className="aspect-[16/9] rounded overflow-hidden"
+                className="rounded-xl overflow-hidden"
             >
                 {imagem.map((src, i) => (
                     <SwiperSlide
                         key={i}
-                        className="w-full h-[400px] sm:h-[500px] md:h-[600px] flex items-center justify-center"
+                        className="w-full flex items-center justify-center "
                     >
-                        <Image
-                            src={src.image.url}
-                            alt={`Slide ${i}`}
-                            width={1600}
-                            height={450}
-                            className="h-full object-contain"
-                            priority
-                        />
+                        <div className="relative w-full max-h-[500px] aspect-video">
+                            <Image
+                                src={src.image.url}
+                                alt={`Slide ${i}`}
+                                fill
+                                className="object-contain"
+                                priority
+                            />
+                        </div>
                     </SwiperSlide>
-
                 ))}
             </Swiper>
         </div>

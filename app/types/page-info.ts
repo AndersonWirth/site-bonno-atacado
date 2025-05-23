@@ -1,5 +1,5 @@
 import type { RichTextContent } from '@graphcms/rich-text-types'
-import { ImageCarrosel, Project, contato, Tabloide } from './projects'
+import { ImageCarrosel, Noticia, contato, Tabloide } from './projects'
 
 export type Social = {
   url: string
@@ -14,22 +14,22 @@ export type HomePageInfo = {
     url: string
   }
   socials: Social[]
-  highlightProjects: Project[]
+  highlightNoticias: Noticia[]
   image: ImageCarrosel[]
   contato: contato
   tabloide: Tabloide[]
 }
 
 export type ProjectPageData = {
-  project: Project
+  noticia: Noticia
 }
 
 export type ProjectsPageData = {
-  projects: Project[]
+  noticias: Noticia[]
 }
 
 export type ProjectsPageStaticData = {
-  projects: {
+  noticias: {
     slug: string
   }[]
 }

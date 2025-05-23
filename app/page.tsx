@@ -1,7 +1,7 @@
 import { ContactForm } from './components/contact-form'
 import { Mapa } from './components/mapa'
 import { HeroSection } from './components/pages/home/hero-section'
-import { HighlightedProjects } from './components/pages/home/highlighted-projects'
+import { HighlightedProjects } from './components/pages/home/highlighted-noticias'
 import { FooterAtacado } from './components/pages/home/contato'
 import { getPageData } from './utils/get-page-data-query'
 
@@ -17,7 +17,7 @@ export default async function Home() {
     console.log(pageData),
     <>
       <HeroSection homeInfo={pageData} />
-      <HighlightedProjects projects={pageData.highlightProjects} />
+      <HighlightedProjects noticias={pageData.highlightNoticias} />
       <Mapa />
       <ContactForm />
       <FooterAtacado contato={pageData.contato} />

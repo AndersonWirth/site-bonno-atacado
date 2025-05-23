@@ -8,7 +8,7 @@ export type ProjectSection = {
   }
 }
 
-export type Project = {
+export type Noticia = {
   slug: string
   thumbnail: {
     url: string

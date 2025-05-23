@@ -5,14 +5,14 @@ import { TechBadge } from '@/app/components/tech-badge'
 import Image from 'next/image'
 import { HiArrowNarrowRight } from 'react-icons/hi'
 import { motion } from 'framer-motion'
-import { Project } from '@/app/types/projects'
+import { Noticia } from '@/app/types/projects'
 import { fadeUpAnimation } from '@/app/lib/animations'
 
-type ProjectCardProps = {
-  project: Project
+type NoticiaCardProps = {
+  noticia: Noticia
 }
 
-export const ProjectCard = ({ project }: ProjectCardProps) => {
+export const NoticiaCard = ({ noticia }: NoticiaCardProps) => {
   return (
     <motion.div
       className="flex gap-6 lg:gap-12 flex-col lg:flex-row"
@@ -29,10 +29,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         transition={{ duration: 0.3, delay: 0.3 }}
       >
         <Image
-          src={project.thumbnail.url}
+          src={noticia.thumbnail.url}
           width={420}
           height={304}
-          alt={`Thumbnail do projeto ${project.title}`}
+          alt={`Thumbnail do projeto ${noticia.title}`}
           className="w-full h-full object-cover rounded-lg"
         />
       </motion.div>
@@ -47,9 +47,9 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             width={20}
             height={20}
             alt=""
-            src="/images/icons/project-title-icon.svg"
+            src="/images/icons/noticia-title-icon.svg"
           />
-          {project.title}
+          {noticia.title}
         </motion.h3>
 
         <motion.p
@@ -57,10 +57,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           {...fadeUpAnimation}
           transition={{ duration: 0.2, delay: 0.3 }}
         >
-          {project.shortDescription}
+          {noticia.shortDescription}
         </motion.p>
 
-        <Link href={`/projects/${project.slug}`}>
+        <Link href={`/noticias/${noticia.slug}`}>
           Ver notícia
           <HiArrowNarrowRight />
         </Link>

@@ -11,6 +11,7 @@ import { Header } from './components/header'
 import { Mapa } from './components/mapa'
 import { Toaster } from './components/toaster'
 import './globals.css'
+import { WhatsappButton } from './components/whatsapp'
 
 
 
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="pt-BR" className={`${inter.variable} ${plexMono.variable}`}>
       <body>
         <Toaster />
+        <WhatsappButton />
         <BackToTop />
         <Header />
         {children}

@@ -1,5 +1,5 @@
-import { ProjectDetails } from '@/app/components/pages/project/project-details'
-import { ProjectSections } from '@/app/components/pages/project/project-sections'
+import { ProjectDetails } from '@/app/components/pages/noticia/noticia-details'
+import { ProjectSections } from '@/app/components/pages/noticia/noticia-sections'
 import { ProjectPageData, ProjectsPageStaticData } from '@/app/types/page-info'
 import { fetchHygraphQuery } from '@/app/utils/fetch-hygraph-query'
 import { Metadata } from 'next'
@@ -14,7 +14,7 @@ type ProjectProps = {
 const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
   const query = `
   query ProjectQuery {
-    project(where: {slug: "${slug}"}) {
+    noticia(where: {slug: "${slug}"}) {
       pageThumbnail {
         url
       }
@@ -46,15 +46,15 @@ const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
   return data
 }
 
-export default async function Project({ params: { slug } }: ProjectProps) {
-  const { project } = await getProjectDetails(slug)
+export default async function Noticia({ params: { slug } }: ProjectProps) {
+  const { noticia } = await getProjectDetails(slug)
 
-  if (!project?.title) return notFound()
+  if (!noticia?.title) return notFound()
 
   return (
     <>
-      <ProjectDetails project={project} />
-      <ProjectSections sections={project.sections} />
+      <ProjectDetails noticia={noticia} />
+      <ProjectSections sections={noticia.sections} />
     </>
   )
 }
@@ -62,28 +62,28 @@ export default async function Project({ params: { slug } }: ProjectProps) {
 export async function generateStaticParams() {
   const query = `
     query ProjectsSlugsQuery {
-      projects(first: 100) {
+      noticias(first: 100) {
         slug
       }
     }
   `
-  const { projects } = await fetchHygraphQuery<ProjectsPageStaticData>(query)
+  const { noticias } = await fetchHygraphQuery<ProjectsPageStaticData>(query)
 
-  return projects
+  return noticias
 }
 
 export async function generateMetadata({
   params: { slug },
 }: ProjectProps): Promise<Metadata> {
   const data = await getProjectDetails(slug)
-  const project = data.project
+  const noticia = data.noticia
   return {
-    title: project.title,
-    description: project.description.text,
+    title: noticia.title,
+    description: noticia.description.text,
     openGraph: {
       images: [
         {
-          url: project.thumbnail.url,
+          url: noticia.thumbnail.url,
           width: 1200,
           height: 630,
         },

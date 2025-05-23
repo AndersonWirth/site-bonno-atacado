@@ -15,7 +15,7 @@ export const getPageData = async (): Promise<HomePageData> => {
           url
           iconSvg
         }
-        highlightProjects {
+        highlightNoticias {
           slug
           thumbnail {
             url

@@ -6,9 +6,7 @@ import { contato } from '@/app/types/projects'
 import { IoLogoWhatsapp, IoMdClock, IoMdHeart } from 'react-icons/io'
 import { Link } from '@/app/components/link'
 import { MdLocationPin } from 'react-icons/md'
-
-
-
+import { IoDocumentAttach } from "react-icons/io5";
 
 type FooterProps = {
     contato: contato
@@ -94,7 +92,7 @@ export const FooterAtacado = ({ contato }: FooterProps) => {
                     <>
                         <div className='flex items-center gap-2'>
                             <h4 className="text-lg sm:text-xl font-semibold mb-2 text-yellow-300">Declarações</h4>
-                            <IoMdClock className='text-yellow-300 mb-2 text-2xl' />
+                            <IoDocumentAttach className='text-yellow-300 mb-2 text-2xl' />
                         </div>
                         <ul className="text-sm sm:text-base space-y-1">
                             {documentos.map((doc) => (
