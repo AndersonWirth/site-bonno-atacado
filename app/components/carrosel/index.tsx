@@ -14,7 +14,7 @@ type Imagens = {
 
 export default function Carrosel({ imagem }: Imagens) {
   return (
-    <div className="w-full max-w-6xl mx-auto px-4">
+    <div className="w-full mx-auto px-4">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
@@ -32,12 +32,12 @@ export default function Carrosel({ imagem }: Imagens) {
             key={i}
             className="w-full flex items-center justify-center "
           >
-            <div className="relative w-full max-h-[500px] aspect-video">
+            <div className="relative w-full max-h-[630px] aspect-video">
               <Image
                 src={src.image.url}
                 alt={`Slide ${i}`}
                 fill
-                className="object-contain"
+                className=""
                 priority
               />
             </div>
