@@ -1,18 +1,15 @@
 'use client'
 
-import { motion } from 'framer-motion';
-import { SectionTitle } from '../section-title';
+import { motion } from 'framer-motion'
+import { SectionTitle } from '../section-title'
 
 export const Mapa = () => {
   return (
-    <section
-      className="flex items-center justify-center bg-blue-950"
-      id="mapa"
-    >
+    <section className="flex items-center justify-center bg-blue-950" id="mapa">
       <div className="w-full max-w-3xl mx-auto">
         <SectionTitle
           title="Localização"
-          className="items-center text-emerald-400 text-center" 
+          className="items-center text-emerald-400 text-center"
         />
         <motion.div
           className="mt-12 w-full flex items-center justify-center bg-blue-950"
@@ -32,5 +29,5 @@ export const Mapa = () => {
         </motion.div>
       </div>
     </section>
-  );
-};
+  )
+}

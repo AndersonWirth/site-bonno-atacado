@@ -8,10 +8,7 @@ type SectionTitleProps = {
   className?: string
 }
 
-export const SectionTitle = ({
-  title,
-  className,
-}: SectionTitleProps) => {
+export const SectionTitle = ({ title, className }: SectionTitleProps) => {
   const animProps = {
     initial: { opacity: 0, x: -100 },
     whileInView: { opacity: 1, x: 0 },

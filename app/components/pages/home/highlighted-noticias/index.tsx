@@ -14,7 +14,8 @@ export const HighlightedProjects = ({ noticias }: HighlightedProjectsProps) => {
     <section className="container py-16">
       <SectionTitle
         title="Notícias em destaque"
-        className="items-center text-emerald-400 text-center" />
+        className="items-center text-emerald-400 text-center"
+      />
       <HorizontalDivider className="mb-16" />
 
       <div>

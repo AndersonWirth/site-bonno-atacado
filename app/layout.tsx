@@ -13,9 +13,6 @@ import { Toaster } from './components/toaster'
 import './globals.css'
 import { WhatsappButton } from './components/whatsapp'
 
-
-
-
 export const metadata = {
   title: {
     default: 'Home',

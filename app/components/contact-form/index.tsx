@@ -39,7 +39,7 @@ export const ContactForm = () => {
       formData.append('email', data.email)
       formData.append('message', data.message)
 
-      const fileInput = (document.querySelector('#file') as HTMLInputElement)
+      const fileInput = document.querySelector('#file') as HTMLInputElement
       const file = fileInput?.files?.[0]
       if (file) {
         formData.append('file', file)
@@ -84,7 +84,8 @@ export const ContactForm = () => {
             type="email"
             {...register('email')}
           />
-          <textarea placeholder="Mensagem"
+          <textarea
+            placeholder="Mensagem"
             className="resize-none w-full h-[138px] bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
             {...register('message')}
           />

@@ -8,7 +8,6 @@ import { HomePageInfo } from '@/app/types/page-info'
 import { motion } from 'framer-motion'
 import { HiArrowNarrowRight } from 'react-icons/hi'
 
-
 type HeroSectionProps = {
   homeInfo: HomePageInfo
 }
@@ -31,9 +30,7 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.5 }}
         >
-
           <Carrosel imagem={homeInfo.image}></Carrosel>
-
 
           <div className="mt-6 lg:mt-10 flex sm:items-center sm:gap-5 flex-col sm:flex-row">
             <Button className="w-max shadow-button" onClick={handleContact}>
@@ -57,7 +54,6 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
           </div>
 
           <Tabloides tabloide={homeInfo.tabloide}></Tabloides>
-
         </motion.div>
       </div>
     </section>

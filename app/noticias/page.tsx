@@ -29,7 +29,6 @@ const getPageData = async (): Promise<ProjectsPageData> => {
 
 export default async function Noticias() {
   const { noticias } = await getPageData()
-  debugger
   return (
     <>
       <PageIntroduction />

@@ -1,7 +1,7 @@
 import { cn } from '@/app/lib/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { TiShoppingCart } from "react-icons/ti";
+import { TiShoppingCart } from 'react-icons/ti'
 
 type NavItemProps = {
   href: string

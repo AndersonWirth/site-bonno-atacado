@@ -1,6 +1,5 @@
 import type { RichTextContent } from '@graphcms/rich-text-types'
 
-
 export type ProjectSection = {
   title: string
   image: {
@@ -59,4 +58,3 @@ export type Tabloide = {
     url: string
   }
 }
-

@@ -97,7 +97,9 @@ export default function Tabloides({ tabloide }: TabloidesProps) {
                       <div className="w-full h-[60vh] sm:h-[80vh] flex items-center justify-center">
                         <Image
                           src={img.url}
-                          alt={`${tabloide[activeIndex].nome} - imagem ${i + 1}`}
+                          alt={`${tabloide[activeIndex].nome} - imagem ${
+                            i + 1
+                          }`}
                           width={1600}
                           height={900}
                           className="max-w-full max-h-full object-contain rounded"
@@ -106,7 +108,6 @@ export default function Tabloides({ tabloide }: TabloidesProps) {
                     </SwiperSlide>
                   ))}
                 </Swiper>
-
               </div>
             </motion.div>
           )}

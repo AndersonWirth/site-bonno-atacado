@@ -2,7 +2,7 @@ import { fetchHygraphQuery } from './fetch-hygraph-query'
 import { HomePageData } from '../types/page-info'
 
 export const getPageData = async (): Promise<HomePageData> => {
-    const query = `
+  const query = `
     query PageInfoQuery {
       page(where: {slug: "home"}) {
         introduction {
@@ -56,5 +56,5 @@ export const getPageData = async (): Promise<HomePageData> => {
       }
     }
   `
-    return fetchHygraphQuery(query, 1000 * 60 * 60 * 24)
+  return fetchHygraphQuery(query, 1000 * 60 * 60 * 24)
 }

@@ -20,7 +20,8 @@ export const PageIntroduction = () => {
         transition={{ duration: 0.6 }}
       >
         <p className="text-gray-400 text-center max-w-[640px] my-6 text-sm sm:text-base">
-          Aqui você poderá conhecer e acompanhar algumas das notícias e novidades que ocorrem na loja.
+          Aqui você poderá conhecer e acompanhar algumas das notícias e
+          novidades que ocorrem na loja.
         </p>
         <Link href="/">
           <HiArrowNarrowLeft size={20} />

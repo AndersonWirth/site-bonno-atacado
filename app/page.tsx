@@ -9,19 +9,18 @@ export const metadata = {
   title: 'Home',
 }
 
-
-
 export default async function Home() {
   const { page: pageData } = await getPageData()
   return (
     console.log(pageData),
-    <>
-      <HeroSection homeInfo={pageData} />
-      <HighlightedProjects noticias={pageData.highlightNoticias} />
-      <Mapa />
-      <ContactForm />
-      <FooterAtacado contato={pageData.contato} />
-
-    </>
+    (
+      <>
+        <HeroSection homeInfo={pageData} />
+        <HighlightedProjects noticias={pageData.highlightNoticias} />
+        <Mapa />
+        <ContactForm />
+        <FooterAtacado contato={pageData.contato} />
+      </>
+    )
   )
 }
