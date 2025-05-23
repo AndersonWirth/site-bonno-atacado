@@ -48,22 +48,23 @@ export default function Tabloides({ tabloide }: TabloidesProps) {
           title="Ofertas em Destaque"
           className="items-center text-emerald-400 text-center"
         />
-        <HorizontalDivider className="mb-16" />
+        <HorizontalDivider className="mb-6" />
 
         <div className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 px-4">
           {tabloide.map((item, i) => (
             <div
               key={item.nome}
-              className="relative cursor-pointer group overflow-hidden rounded-xl shadow-lg transition-transform duration-300 transform hover:scale-[1.02]"
+              className="relative cursor-pointer group overflow-hidden rounded-xl shadow-lg transition-transform duration-300 transform hover:scale-[1.02] min-h-[400px]"
               onClick={() => openGallery(i)}
             >
               <Image
                 src={item.capa.url}
                 alt={item.nome}
                 width={1600}
-                height={450}
-                className="w-full h-auto object-cover group-hover:brightness-75 transition duration-300"
+                height={900}
+                className="w-full h-full object-cover object-bottom group-hover:brightness-75 transition duration-300"
               />
+
 
               {/* Sobreposição com texto e ícone */}
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

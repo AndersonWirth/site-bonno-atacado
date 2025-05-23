@@ -7,14 +7,9 @@ export const metadata: Metadata = {
 }
 
 function formatPhone(phone: string) {
-  // Remove tudo que não for número
   const cleaned = phone.replace(/\D/g, '')
-
-  // Remove o DDI "55" se existir
   const localNumber = cleaned.startsWith('55') ? cleaned.slice(2) : cleaned
-
-  // Formata: (49) 98903-7775
-  return localNumber.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3')
+  return localNumber.replace(/^(\d{2})(\d{4,5})(\d{4})$/, '($1) $2-$3')
 }
 
 export default async function ContatoPage() {
@@ -43,6 +38,7 @@ export default async function ContatoPage() {
                 </a>
               </span>
             </li>
+
             <li className="flex items-start gap-3">
               <Phone className="w-5 h-5 mt-1 text-green-600" />
               <span>
@@ -66,14 +62,26 @@ export default async function ContatoPage() {
                   href={`https://wa.me/${contato.telefoneTelevendas}?text=Olá,%20gostaria%20de%20comprar%20no%20atacado.`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className=" hover:underline"
+                  className="hover:underline"
                 >
                   {formatPhone(contato.telefoneTelevendas)}
                 </a>
               </span>
             </li>
+
+            <li className="flex items-start gap-3">
+              <Phone className="w-5 h-5 mt-1 text-green-600" />
+              <span>
+                <strong>Telefone fixo:</strong>{' '}
+                <a href={`tel:${contato.telfixo}`} className="hover:underline">
+                  {formatPhone(contato.telfixo)}
+                </a>
+              </span>
+            </li>
           </ul>
         </section>
+
+        {/* Endereço e horário */}
         <section className="shadow-xl rounded-2xl p-8 space-y-6 border">
           <h2 className="text-2xl font-semibold text-emerald-400 mb-4">
             Faça uma visita presencial :)
@@ -86,7 +94,7 @@ export default async function ContatoPage() {
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <Clock className="w-5 h-5 mt-1 text-green-600" />
+              <Clock className="w-6 h-6 mt-1 text-green-600" />
               <span>
                 <strong>Atendimento:</strong> {contato.horario}
               </span>
@@ -94,6 +102,8 @@ export default async function ContatoPage() {
           </ul>
         </section>
       </div>
+
+      {/* Mapa */}
       <div className="mt-12 w-full flex items-center justify-center bg-blue-950">
         <div className="w-full">
           <iframe

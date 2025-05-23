@@ -1,15 +1,24 @@
 'use client'
 
-import React from 'react'
-import { motion } from 'framer-motion'
-import { contato } from '@/app/types/projects'
-import { IoLogoWhatsapp, IoMdClock, IoMdHeart } from 'react-icons/io'
 import { Link } from '@/app/components/link'
-import { MdLocationPin } from 'react-icons/md'
+import { contato } from '@/app/types/projects'
+import { motion } from 'framer-motion'
+import { IoLogoWhatsapp, IoMdClock, IoMdHeart } from 'react-icons/io'
 import { IoDocumentAttach } from 'react-icons/io5'
+import { MdLocationPin } from 'react-icons/md'
 
 type FooterProps = {
   contato: contato
+}
+
+function formatPhone(phone: string): string {
+  const clean = phone.replace(/\D/g, '')
+  if (clean.length === 11) {
+    return `(${clean.slice(0, 2)}) ${clean.slice(2, 7)}-${clean.slice(7)}`
+  } else if (clean.length === 10) {
+    return `(${clean.slice(0, 2)}) ${clean.slice(2, 6)}-${clean.slice(6)}`
+  }
+  return phone // fallback se não for 10 ou 11 dígitos
 }
 
 export const FooterAtacado = ({ contato }: FooterProps) => {
@@ -19,6 +28,7 @@ export const FooterAtacado = ({ contato }: FooterProps) => {
     email,
     telefone,
     telefoneTelevendas,
+    telfixo,
     endereco,
     horario,
     documentos,
@@ -47,23 +57,32 @@ export const FooterAtacado = ({ contato }: FooterProps) => {
           <p className="text-sm sm:text-base mt-1">
             Telefone:{' '}
             <a
-              href={`https://wa.me/${telefone}?text=Olá%20gostaria%20de%20mais%20informações`}
+              href={`https://wa.me/${telefone.replace(/\D/g, '')}?text=Olá%20gostaria%20de%20mais%20informações`}
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-emerald-400 transition"
             >
-              {telefone}
+              {formatPhone(telefone)}
             </a>
           </p>
           <p className="text-sm sm:text-base mt-1">
             Televendas:{' '}
             <a
-              href={`https://wa.me/${telefoneTelevendas}?text=Olá%20gostaria%20de%20mais%20informações`}
+              href={`https://wa.me/${telefoneTelevendas.replace(/\D/g, '')}?text=Olá%20gostaria%20de%20mais%20informações`}
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-emerald-400 transition"
             >
-              {telefoneTelevendas}
+              {formatPhone(telefoneTelevendas)}
+            </a>
+          </p>
+          <p className="text-sm sm:text-base mt-1">
+            Telefone fixo:{' '}
+            <a
+              href={`tel:${telfixo.replace(/\D/g, '')}`}
+              className="underline hover:text-emerald-400 transition"
+            >
+              {formatPhone(telfixo)}
             </a>
           </p>
         </motion.div>
@@ -76,7 +95,6 @@ export const FooterAtacado = ({ contato }: FooterProps) => {
             </h4>
             <IoMdClock className="text-yellow-300 mb-2 text-2xl" />
           </div>
-
           <div className="flex flex-col sm:flex-row sm:items-center sm:gap-5">
             <div className="text-sm sm:text-base flex items-center h-20 gap-3 mt-3 sm:mt-0">
               <p className="whitespace-pre-line">{horario}</p>

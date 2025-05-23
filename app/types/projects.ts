@@ -38,6 +38,7 @@ export type contato = {
   email: string
   telefone: string
   telefoneTelevendas: string
+  telfixo: string
   endereco: string
   horario: string
   documentos: {

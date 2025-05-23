@@ -36,6 +36,7 @@ export const getPageData = async (): Promise<HomePageData> => {
           email
           telefone
           telefoneTelevendas
+          telfixo
           endereco
           horario
           documentos {
