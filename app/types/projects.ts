@@ -34,7 +34,7 @@ export type ImageCarrosel = {
   }
 }
 
-export type Rodape = {
+export type contato = {
   nomeEmpresa: string
   copyright: string
   email: string

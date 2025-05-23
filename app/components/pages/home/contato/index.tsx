@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Rodape } from '@/app/types/projects'
+import { contato } from '@/app/types/projects'
 import { IoLogoWhatsapp, IoMdClock, IoMdHeart } from 'react-icons/io'
 import { Link } from '@/app/components/link'
 import { MdLocationPin } from 'react-icons/md'
@@ -11,11 +11,11 @@ import { MdLocationPin } from 'react-icons/md'
 
 
 type FooterProps = {
-    rodape: Rodape
+    contato: contato
 }
 
 
-export const FooterAtacado = ({ rodape }: FooterProps) => {
+export const FooterAtacado = ({ contato }: FooterProps) => {
     const {
         nomeEmpresa,
         copyright,
@@ -25,7 +25,7 @@ export const FooterAtacado = ({ rodape }: FooterProps) => {
         endereco,
         horario,
         documentos,
-    } = rodape
+    } = contato
 
     return (<motion.footer className="bg-blue-900 text-gray-300 px-4 sm:px-6 md:px-12 py-12 mt-20">
         <motion.div className="container max-w-9xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
