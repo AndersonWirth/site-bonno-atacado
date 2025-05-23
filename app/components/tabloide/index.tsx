@@ -65,7 +65,6 @@ export default function Tabloides({ tabloide }: TabloidesProps) {
                 className="w-full h-full object-cover object-bottom group-hover:brightness-75 transition duration-300"
               />
 
-
               {/* Sobreposição com texto e ícone */}
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <span className="text-white text-lg font-semibold flex items-center gap-2">
@@ -76,7 +75,12 @@ export default function Tabloides({ tabloide }: TabloidesProps) {
                     viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405M4 4v16h16V4H4z" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 17h5l-1.405-1.405M4 4v16h16V4H4z"
+                    />
                   </svg>
                   Ver tabloide de ofertas
                 </span>
@@ -114,7 +118,9 @@ export default function Tabloides({ tabloide }: TabloidesProps) {
                       <div className="w-full h-[60vh] sm:h-[80vh] flex items-center justify-center">
                         <Image
                           src={img.url}
-                          alt={`${tabloide[activeIndex].nome} - imagem ${i + 1}`}
+                          alt={`${tabloide[activeIndex].nome} - imagem ${
+                            i + 1
+                          }`}
                           width={1600}
                           height={900}
                           className="max-w-full max-h-full object-contain rounded"

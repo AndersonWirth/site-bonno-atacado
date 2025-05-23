@@ -57,7 +57,10 @@ export const FooterAtacado = ({ contato }: FooterProps) => {
           <p className="text-sm sm:text-base mt-1">
             Telefone:{' '}
             <a
-              href={`https://wa.me/${telefone.replace(/\D/g, '')}?text=Olá%20gostaria%20de%20mais%20informações`}
+              href={`https://wa.me/${telefone.replace(
+                /\D/g,
+                '',
+              )}?text=Olá%20gostaria%20de%20mais%20informações`}
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-emerald-400 transition"
@@ -68,7 +71,10 @@ export const FooterAtacado = ({ contato }: FooterProps) => {
           <p className="text-sm sm:text-base mt-1">
             Televendas:{' '}
             <a
-              href={`https://wa.me/${telefoneTelevendas.replace(/\D/g, '')}?text=Olá%20gostaria%20de%20mais%20informações`}
+              href={`https://wa.me/${telefoneTelevendas.replace(
+                /\D/g,
+                '',
+              )}?text=Olá%20gostaria%20de%20mais%20informações`}
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-emerald-400 transition"

@@ -20,7 +20,10 @@ export const NoticiaCard = ({ noticia }: NoticiaCardProps) => {
       exit={{ opacity: 0, y: 100 }}
       transition={{ duration: 0.5 }}
     >
-      <Link href={`/noticias/${noticia.slug}`} className="relative w-full h-[200px] sm:h-[300px] lg:w-[420px] lg:min-h-full block">
+      <Link
+        href={`/noticias/${noticia.slug}`}
+        className="relative w-full h-[200px] sm:h-[300px] lg:w-[420px] lg:min-h-full block"
+      >
         <motion.div
           className="w-full h-full"
           initial={{ opacity: 0, y: 100, scale: 0.5 }}
@@ -70,7 +73,10 @@ export const NoticiaCard = ({ noticia }: NoticiaCardProps) => {
         </motion.p>
 
         <div className="inline-block">
-          <Link href={`/noticias/${noticia.slug}`} className="group/link text-emerald-400 hover:underline text-sm font-medium flex items-center gap-1 transition-colors">
+          <Link
+            href={`/noticias/${noticia.slug}`}
+            className="group/link text-emerald-400 hover:underline text-sm font-medium flex items-center gap-1 transition-colors"
+          >
             Ver notícia
             <HiArrowNarrowRight className="group-hover/link:translate-x-1 transition-transform" />
           </Link>

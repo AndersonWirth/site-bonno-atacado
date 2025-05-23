@@ -36,7 +36,8 @@ export const ProjectDetails = ({ noticia }: ProjectDetailsProps) => {
     // Facebook
     if (socialHtml.includes('facebook.com')) {
       const script = document.createElement('script')
-      script.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v17.0'
+      script.src =
+        'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v17.0'
       script.async = true
       script.defer = true
       script.crossOrigin = 'anonymous'
@@ -48,7 +49,6 @@ export const ProjectDetails = ({ noticia }: ProjectDetailsProps) => {
     }
 
     // Aqui você pode adicionar suporte a outros serviços no futuro
-
   }, [noticia.socialMidia])
 
   return (
@@ -82,8 +82,12 @@ export const ProjectDetails = ({ noticia }: ProjectDetailsProps) => {
         <RichText
           content={noticia.description.raw}
           renderers={{
-            h1: ({ children }) => <h1 className="text-3xl font-bold">{children}</h1>,
-            h2: ({ children }) => <h2 className="text-2xl font-semibold">{children}</h2>,
+            h1: ({ children }) => (
+              <h1 className="text-3xl font-bold">{children}</h1>
+            ),
+            h2: ({ children }) => (
+              <h2 className="text-2xl font-semibold">{children}</h2>
+            ),
             p: ({ children }) => <p className="mb-4">{children}</p>,
             bold: ({ children }) => <strong>{children}</strong>,
           }}
@@ -97,7 +101,6 @@ export const ProjectDetails = ({ noticia }: ProjectDetailsProps) => {
           dangerouslySetInnerHTML={{ __html: noticia.socialMidia }}
         />
       )}
-
 
       <Link
         href="/noticias"

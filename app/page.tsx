@@ -11,13 +11,10 @@ export const metadata = {
 export default async function Home() {
   const { page: pageData } = await getPageData()
   return (
-    (
-      <>
-        <HeroSection homeInfo={pageData} />
-        <HighlightedProjects noticias={pageData.highlightNoticias} />
-        <Mapa />
-
-      </>
-    )
+    <>
+      <HeroSection homeInfo={pageData} />
+      <HighlightedProjects noticias={pageData.highlightNoticias} />
+      <Mapa />
+    </>
   )
 }

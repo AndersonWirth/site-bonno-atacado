@@ -36,7 +36,11 @@ const plexMono = IBM_Plex_Mono({
   weight: ['400', '500'],
 })
 
-export default async function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: ReactNode
+}) {
   const { page: pageData } = await getPageData()
   return (
     <html lang="pt-BR" className={`${inter.variable} ${plexMono.variable}`}>

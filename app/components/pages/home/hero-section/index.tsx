@@ -33,7 +33,6 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.5 }}
         >
-
           <div className="mt-6 lg:mt-10 flex sm:items-center sm:gap-5 flex-col sm:flex-row">
             <Button className="w-max shadow-button" onClick={handleContact}>
               Entre em contato
