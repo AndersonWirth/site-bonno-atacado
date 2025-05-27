@@ -47,16 +47,19 @@ export const Header = () => {
           aria-label="Toggle menu"
         >
           <span
-            className={`block h-0.5 w-6 bg-white transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''
-              }`}
+            className={`block h-0.5 w-6 bg-white transition-transform duration-300 ${
+              menuOpen ? 'rotate-45 translate-y-2' : ''
+            }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-white transition-opacity duration-300 ${menuOpen ? 'opacity-0' : 'opacity-100'
-              }`}
+            className={`block h-0.5 w-6 bg-white transition-opacity duration-300 ${
+              menuOpen ? 'opacity-0' : 'opacity-100'
+            }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-white transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''
-              }`}
+            className={`block h-0.5 w-6 bg-white transition-transform duration-300 ${
+              menuOpen ? '-rotate-45 -translate-y-2' : ''
+            }`}
           />
         </button>
       </div>
