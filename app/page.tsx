@@ -15,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: 'Bonno Free Shop',
       description: 'Produtos importados com qualidade e preço justo.',
       url: 'https://www.bonnofreeshop.com.br',
-      siteName: 'Bonno Free Shop',
+      siteName: 'Bonno FreeShop',
       type: 'website',
     },
   }
