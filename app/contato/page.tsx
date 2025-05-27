@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { getPageData } from '../utils/get-page-data-query'
 
 export const metadata: Metadata = {
-  title: 'Contato - Bonno Freeshop',
+  title: 'Contato - Bonno Free Shop',
 }
 
 function formatPhone(phone: string) {
@@ -26,7 +26,7 @@ export default async function ContatoPage() {
         {/* Bloco de informações */}
         <section className="shadow-xl rounded-2xl p-8 space-y-6 border">
           <h2 className="text-2xl font-semibold text-emerald-400 mb-4">
-            Informações do Bonno Freeshop
+            Informações do Bonno Free Shop
           </h2>
           <ul className="space-y-4 text-emerald-400 text-base">
             <li className="flex items-start gap-3">

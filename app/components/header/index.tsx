@@ -28,7 +28,7 @@ export const Header = () => {
             width={130}
             height={130}
             src="/images/logo22.svg"
-            alt="Logo Bonno Freeshop"
+            alt="Logo Bonno Free Shop"
             className="object-contain"
           />
         </Link>
@@ -47,19 +47,16 @@ export const Header = () => {
           aria-label="Toggle menu"
         >
           <span
-            className={`block h-0.5 w-6 bg-white transition-transform duration-300 ${
-              menuOpen ? 'rotate-45 translate-y-2' : ''
-            }`}
+            className={`block h-0.5 w-6 bg-white transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''
+              }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-white transition-opacity duration-300 ${
-              menuOpen ? 'opacity-0' : 'opacity-100'
-            }`}
+            className={`block h-0.5 w-6 bg-white transition-opacity duration-300 ${menuOpen ? 'opacity-0' : 'opacity-100'
+              }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-white transition-transform duration-300 ${
-              menuOpen ? '-rotate-45 -translate-y-2' : ''
-            }`}
+            className={`block h-0.5 w-6 bg-white transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''
+              }`}
           />
         </button>
       </div>

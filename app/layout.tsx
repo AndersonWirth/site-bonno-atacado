@@ -16,7 +16,7 @@ import { ContactForm } from './components/contact-form'
 export const metadata = {
   title: {
     default: 'Home',
-    template: '%s | Bonno Freeshop',
+    template: '%s | Bonno Free shop',
   },
   icons: [
     {

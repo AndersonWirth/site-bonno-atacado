@@ -5,7 +5,7 @@ import { MessageCircle } from 'lucide-react'
 export function WhatsappButton() {
   const phoneNumber = '5549989037775' // Ex: 5548999998888
   const message =
-    'Olá! Gostaria de mais informações sobre os produtos da Bonno Freeshop.'
+    'Olá! Gostaria de mais informações sobre os produtos da Bonno Free Shop.'
 
   return (
     <a

@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.bonnofreeshop.com.br
+
+# Sitemaps
+Sitemap: https://www.bonnofreeshop.com.br/sitemap.xml
