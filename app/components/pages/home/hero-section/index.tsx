@@ -19,7 +19,7 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
       contactSection.scrollIntoView({ behavior: 'smooth' })
     }
   }
-
+  debugger
   return (
     <section className="w-full h-full bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-end pb-10 sm:pb-32 py-32 lg:pb-[110px] bg-blue-950">
       <div>
