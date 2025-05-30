@@ -1,6 +1,7 @@
 export const fetchHygraphQuery = async <T>(
   query: string,
   revalidate?: number,
+  variables?: Record<string, any>,
 ): Promise<T> => {
   const fetchOptions: RequestInit & { next?: { revalidate: number } } = {
     method: 'POST',
@@ -9,7 +10,7 @@ export const fetchHygraphQuery = async <T>(
       Accept: 'application/json',
       Authorization: `Bearer ${process.env.HYGRAPH_TOKEN}`,
     },
-    body: JSON.stringify({ query }),
+    body: JSON.stringify({ query, variables }), // ← inclui as variáveis aqui
   }
 
   if (revalidate !== undefined) {

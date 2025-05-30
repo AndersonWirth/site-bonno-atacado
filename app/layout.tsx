@@ -4,14 +4,14 @@ import { ReactNode } from 'react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
-import { BackToTop } from './components/back-to-top'
-import { Header } from './components/header'
-import { FooterAtacado } from './components/pages/home/contato'
-import { Toaster } from './components/toaster'
-import { WhatsappButton } from './components/whatsapp'
 import './globals.css'
-import { getPageData } from './utils/get-page-data-query'
-import { ContactForm } from './components/contact-form'
+import { Toaster } from 'react-hot-toast'
+import { WhatsappButton } from '@/app/components/whatsapp'
+import { BackToTop } from '@/app/components/back-to-top'
+import { Header } from '@/app/components/header'
+import { ContactForm } from '@/app/components/contact-form'
+import { FooterAtacado } from '@/app/components/pages/home/contato'
+import { getPageDataBySlug } from '@/app/utils/get-page-data-query'
 
 export const metadata = {
   title: {
@@ -41,17 +41,22 @@ export default async function RootLayout({
 }: {
   children: ReactNode
 }) {
-  const { page: pageData } = await getPageData()
+  const { page: pageData } = await getPageDataBySlug('home')
   return (
     <html lang="pt-BR" className={`${inter.variable} ${plexMono.variable}`}>
       <body>
-        <Toaster />
-        <WhatsappButton />
-        <BackToTop />
-        <Header />
+        {
+          //<Toaster />
+          //<WhatsappButton />
+          //<BackToTop />
+          //<Header />
+        }
         {children}
-        <ContactForm />
-        <FooterAtacado contato={pageData.contato} />
+
+        {
+          //<ContactForm />
+          //<FooterAtacado contato={pageData.contato} />
+        }
       </body>
     </html>
   )

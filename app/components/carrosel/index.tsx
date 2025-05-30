@@ -13,6 +13,7 @@ type Imagens = {
 }
 
 export default function Carrosel({ imagem }: Imagens) {
+  debugger
   return (
     <div className="w-full mx-auto px-4">
       <Swiper

@@ -1,6 +1,6 @@
 import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 import { Metadata } from 'next'
-import { getPageData } from '../utils/get-page-data-query'
+import { getPageDataBySlug } from '../utils/get-page-data-query'
 
 export const metadata: Metadata = {
   title: 'Contato - Bonno Free Shop',
@@ -13,7 +13,7 @@ function formatPhone(phone: string) {
 }
 
 export default async function ContatoPage() {
-  const { page } = await getPageData()
+  const { page } = await getPageDataBySlug('home')
   const contato = page.contato
 
   return (

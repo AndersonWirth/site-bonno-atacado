@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { Button } from './components/button'
 import { HiArrowNarrowLeft } from 'react-icons/hi'
+import { Button } from './components/button'
 
 export default function NotFound() {
   return (

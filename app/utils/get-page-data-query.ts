@@ -1,10 +1,10 @@
 import { HomePageData } from '../types/page-info'
 import { fetchHygraphQuery } from './fetch-hygraph-query'
 
-export const getPageData = async (): Promise<HomePageData> => {
+export const getPageDataBySlug = async (slug: string): Promise<HomePageData> => {
   const query = `
-    query PageInfoQuery {
-      page(where: {slug: "home"}) {
+    query PageInfoQuery($slug: String!) {
+      page(where: {slug: $slug}) {
         introduction {
           raw
         }
@@ -58,8 +58,6 @@ export const getPageData = async (): Promise<HomePageData> => {
       }
     }
   `
-  return fetchHygraphQuery(
-    query,
-    60, // 1 minuto
-  )
+
+  return fetchHygraphQuery(query, 60, { slug })
 }
